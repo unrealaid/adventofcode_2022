@@ -1,9 +1,10 @@
-# Part one
 def make_range(input: str):
     start = int(input.split("-")[0].strip())
     end = int(input.split("-")[1].strip()) + 1
     return set(range(start, end, 1))
 
+
+# Part one
 input_array = []
 with open("input.txt", "r") as f:
     input_array = f.readlines()
@@ -19,11 +20,6 @@ for assignments in input_array:
 print(count)
 
 # Part two
-def make_range(input: str):
-    start = int(input.split("-")[0].strip())
-    end = int(input.split("-")[1].strip()) + 1
-    return set(range(start, end, 1))
-
 input_array = []
 with open("input.txt", "r") as f:
     input_array = f.readlines()

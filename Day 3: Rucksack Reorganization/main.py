@@ -1,10 +1,14 @@
-# Part one
 import string
+
+
 def infinite_sequence():
     num = 1
     while True:
         yield num
         num += 1
+
+
+# Part one
 gen = infinite_sequence()
 priorities_map = dict.fromkeys(string.ascii_lowercase + string.ascii_uppercase)
 for key in priorities_map.keys():
@@ -20,17 +24,11 @@ for rucksack in input_array:
     b = list(rucksack.strip())[int(len(rucksack.strip()) / 2):]
     for item_a in a:
         if item_a in b:
-            priorities_sum += int(priorities_map[item_a])
+            priorities_sum += int(priorities_map[item_a])  # type: ignore
             break
 print(priorities_sum)
 
 # Part two
-import string
-def infinite_sequence():
-    num = 1
-    while True:
-        yield num
-        num += 1
 gen = infinite_sequence()
 priorities_map = dict.fromkeys(string.ascii_lowercase + string.ascii_uppercase)
 for key in priorities_map.keys():
@@ -51,7 +49,7 @@ for rucksack in input_array:
         limiter = 3
         for item_a in group_rucksacks[0]:
             if item_a in group_rucksacks[1] and item_a in group_rucksacks[2]:
-                priorities_sum += int(priorities_map[item_a])
+                priorities_sum += int(priorities_map[item_a])  # type: ignore
                 group_rucksacks = []
                 break
 print(priorities_sum)
